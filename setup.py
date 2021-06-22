@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-""" setup.py for cp4s-connector-sdk Python Module """
+""" setup.py for cacao-ansible Python Module """
 
 from setuptools import setup, find_packages
 
@@ -21,20 +21,22 @@ setup(
 
     # This SDK depends on resilient_sdk which depends on resilient as well as other python modules
     install_requires=[
-        "resilient_sdk"
+        "pydantic", 
+        "ansible",
+        "ansible-runner"
     ],
 
     include_package_data=True,
 
-    # Add command line: connector-sdk
+
     entry_points={
-        "console_scripts": ["connector-sdk=cp4s_connector_sdk.sdk:main"]
+       
     },
 
     # PyPI metadata
     author="Ryan Gordon",
     author_email="ryan.gordon1@ibm.com",
-    description="Python SDK for developing Connectors for the Cloud Pak for Security Platform",
+    description="Python package to define the ansible-json command type for the CACAO Spec",
     long_description=long_description,
     long_description_content_type='text/markdown',
     classifiers=[
